@@ -1,132 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculator App</title>
-  <style>
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e2a38, #274060);
-      color: #f0f4f8;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Navigation */
-    nav {
-      background-color: #152635;
-      padding: 20px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      font-weight: 600;
-    }
-    nav a.nav-link {
-      color: #a4d7ff;
-      text-decoration: none;
-      font-size: 1.05rem;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    nav a.nav-link:hover,
-    nav a.nav-link:focus {
-      background-color: #3a82f6;
-      color: white;
-      outline: none;
-    }
-
-    /* Main container */
-    .calculator {
-      flex-grow: 1;
-      max-width: 480px;
-      background: #243b55;
-      margin: 60px auto 80px;
-      padding: 40px 35px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      text-align: center;
-    }
-
-    .calculator h1 {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
-      letter-spacing: 1.2px;
-    }
-    .calculator p {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      margin-bottom: 35px;
-      color: #cbd6e6dd;
-    }
-
-    /* Buttons */
-    .button {
-      background: #4a90e2;
-      color: white;
-      padding: 14px 30px;
-      margin: 0 15px;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.15rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.6);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      display: inline-block;
-      min-width: 140px;
-    }
-    .button:hover,
-    .button:focus {
-      background: #6aa7ff;
-      box-shadow: 0 6px 22px rgba(106, 167, 255, 0.8);
-      outline: none;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 520px) {
-      .calculator {
-        margin: 30px 20px 50px;
-        padding: 30px 25px;
-      }
-      nav {
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 15px 0;
-      }
-      .button {
-        margin: 12px 8px;
-        min-width: 120px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="calculator.html" class="nav-link">Calculator</a>
-    <a href="functions.html" class="nav-link">Functions</a>
-    <a href="login.html" class="nav-link">Login</a>
-    <a href="password.html" class="nav-link">Password</a>
-    <a href="stringsandnumbers.html" class="nav-link">Strings & Numbers</a>
-    <a href="switch.html" class="nav-link">Switch</a>
-    <a href="variableScope.html" class="nav-link">Scope</a>
-  </nav>
-
   <div class="calculator">
-    <h1>Welcome to the Calculator App</h1>
-    <p>Perform basic arithmetic operations and explore key JavaScript concepts with this mini-site.</p>
-    <a href="calculator.html" class="button" role="button">Go to Calculator</a>
-    <a href="functions.html" class="button" role="button">Learn Functions</a>
+    <div id="display">0</div>
+
+    <!-- Top row -->
+    <button class="button action" data-action="clear">AC</button>
+    <button class="button operator" data-operator="÷">÷</button>
+    <button class="button operator" data-operator="×">×</button>
+    <button class="button operator" data-operator="−">−</button>
+
+    <!-- Number pad + plus / equals -->
+    <button class="button number">7</button>
+    <button class="button number">8</button>
+    <button class="button number">9</button>
+    <button class="button operator" data-operator="+">+</button>
+
+    <button class="button number">4</button>
+    <button class="button number">5</button>
+    <button class="button number">6</button>
+    <button id="equals" class="button equals" rowspan="2">=</button>
+
+    <button class="button number">1</button>
+    <button class="button number">2</button>
+    <button class="button number">3</button>
+
+    <button class="button zero number">0</button>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
